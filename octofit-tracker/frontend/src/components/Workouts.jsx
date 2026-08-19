@@ -7,7 +7,7 @@ function Workouts() {
   const [state, setState] = useState({ loading: true, error: '' })
 
   useEffect(() => {
-    fetchCollection('workouts')
+    fetchCollection('/api/workouts/')
       .then((items) => {
         setWorkouts(items)
         setState({ loading: false, error: '' })

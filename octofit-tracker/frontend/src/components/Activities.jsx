@@ -7,7 +7,7 @@ function Activities() {
   const [state, setState] = useState({ loading: true, error: '' })
 
   useEffect(() => {
-    fetchCollection('activities')
+    fetchCollection('/api/activities/')
       .then((items) => {
         setActivities(items)
         setState({ loading: false, error: '' })

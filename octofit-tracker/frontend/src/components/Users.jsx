@@ -7,7 +7,7 @@ function Users() {
   const [state, setState] = useState({ loading: true, error: '' })
 
   useEffect(() => {
-    fetchCollection('users')
+    fetchCollection('/api/users/')
       .then((items) => {
         setUsers(items)
         setState({ loading: false, error: '' })
