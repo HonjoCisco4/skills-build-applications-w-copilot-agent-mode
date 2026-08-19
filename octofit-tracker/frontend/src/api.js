@@ -13,7 +13,7 @@ export function normalizeCollection(payload) {
 }
 
 export async function fetchCollection(path) {
-  const response = await fetch(`${API_BASE_URL}${path}`)
+  const response = await fetch(path.startsWith('http') ? path : `${API_BASE_URL}${path}`)
   if (!response.ok) {
     throw new Error(`Unable to load ${path} (${response.status})`)
   }
